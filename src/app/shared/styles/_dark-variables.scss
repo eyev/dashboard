@@ -1,0 +1,51 @@
+$brand-pink: hsl(340, 82%, 52%);
+$brand-blue: hsl(218, 100%, 63%);
+$brand-dark-grey: hsl(0, 0%, 13%);
+$brand-light-grey: hsl(0, 0%, 37%);
+$brand-lighter-grey: hsl(0, 0%, 74%);
+$brand-success: hsl(141, 71%, 48%);
+$brand-danger: hsl(4, 90%, 58%);
+$brand-info: rgba($brand-blue, 0.6);
+$brand-white: hsl(0, 0%, 96%);
+$brand-font-family: BlinkMacSystemFont, -apple-system, 'Source Sans Pro',
+  'Roboto', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  'Helvetica', 'Arial', sans-serif;
+
+// ALL color definitions in components must come from this map
+// variables that define size can live independent of this map
+$variables: (
+  app-primary-color: $brand-blue,
+  app-accent-color: $brand-pink,
+  app-background: $brand-dark-grey,
+  app-success-color: $brand-success,
+  app-danger-color: $brand-danger,
+  app-info-color: $brand-info,
+  app-border-color: $brand-light-grey,
+);
+
+// Bulma Theme Customization
+// Generic
+$primary: $brand-blue;
+$link: $brand-pink;
+$background: $brand-dark-grey;
+$body-background-color: $brand-dark-grey;
+$body-color: $brand-white;
+$family-sans-serif: $brand-font-family;
+
+// Nav
+$navbar-background-color: darken($background, 5%);
+
+// Buttons
+$button-background-color: $brand-pink;
+$button-color: $brand-white;
+$button-border-color: darken($button-background-color, 5%);
+$button-hover-color: lighten($brand-white, 100%);
+$button-hover-border-color: darken($button-background-color, 10%);
+$button-focus-color: lighten($brand-white, 100%);
+$button-focus-border-color: darken($button-background-color, 10%);
+$button-active-color: lighten($brand-white, 100%);
+$button-active-border-color: darken($button-background-color, 10%);
+
+// Dropdowns
+$dropdown-content-background-color: #111;
+$dropdown-divider-background-color: $brand-light-grey;

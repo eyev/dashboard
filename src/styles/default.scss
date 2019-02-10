@@ -1,0 +1,9 @@
+@import '../app/shared/styles/default-variables';
+
+:root {
+  @each $key, $value in $variables {
+    --#{$key}: #{$value};
+  }
+}
+
+@import '~bulma/bulma';

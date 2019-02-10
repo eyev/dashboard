@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run ng serve -- --aot --configuration=local",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,6 +20,9 @@
     "@angular/platform-browser-dynamic": "7.2.4",
     "@angular/router": "7.2.4",
     "@datorama/akita": "2.1.2",
+    "@fortawesome/angular-fontawesome": "0.3.0",
+    "@fortawesome/fontawesome-svg-core": "1.2.13",
+    "@fortawesome/free-solid-svg-icons": "5.7.0",
     "bulma": "0.7.4",
     "core-js": "2.5.4",
     "rxjs": "6.3.3",

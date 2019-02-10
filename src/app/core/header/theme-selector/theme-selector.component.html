@@ -1,0 +1,35 @@
+<div
+  class="dropdown is-right"
+  [class.is-active]="isActive"
+  (click)="toggleThemeSelector()"
+>
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+      <fa-icon [icon]="['fas', 'palette']" class="icon"></fa-icon>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-header">
+        <h2 class="is-uppercase has-text-weight-semibold">Select Theme</h2>
+      </div>
+      <hr class="dropdown-divider" />
+      <div class="dropdown-item">
+        <div class="themes">
+          <div
+            class="theme"
+            *ngFor="let theme of (themes | async)"
+            [style.background-color]="theme.color"
+            (click)="onSelectTheme(theme)"
+          >
+            <fa-icon
+              [icon]="['fas', 'check-circle']"
+              *ngIf="(activeThemeId | async) === theme.codeName"
+              class="is-size-6"
+            ></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

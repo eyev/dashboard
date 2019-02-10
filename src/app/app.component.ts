@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+
+import { ThemesService } from '@app/core/header/theme-selector/state/themes.service';
+import { WINDOW } from '@app/shared/utility/window.service';
 
 @Component({
   selector: 'eyev-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'eyev-dashboard';
+  constructor(themeService: ThemesService, @Inject(WINDOW) window: Window) {
+    themeService.init();
+    const theme = window.localStorage.getItem('app-theme');
+    if (!theme) {
+      themeService.setActive('default');
+      return;
+    }
+    themeService.setTheme(JSON.parse(theme));
+  }
 }

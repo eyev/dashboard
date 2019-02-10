@@ -1,0 +1,20 @@
+@import '../../shared/styles/mixins';
+nav {
+  @include var(border-bottom-color, app-border-color);
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+  position: sticky;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  align-items: center;
+  padding: 0 1rem;
+  font-weight: 600;
+  span {
+    @include var(color, app-accent-color);
+  }
+}
+.navbar-menu {
+  align-items: center;
+  justify-content: flex-end;
+}
