@@ -26,35 +26,13 @@ export class ThemesService {
     this.setActive(theme.codeName);
   }
 
-  /**
-   * Based off of https://github.com/maychan111/ng-multi-bootstrap-themes
-   */
   private toggleTheme(theme: Theme) {
-    if (theme && this.getThemeLink(theme)) {
-      const links = this.window.document.getElementsByTagName('link');
-      for (var i = 0; i < links.length; i++) {
-        const link = links[i];
-        if (link.rel.indexOf('stylesheet') != -1 && link.title) {
-          if (link.title === theme.codeName) {
-            link.disabled = false;
-          } else {
-            link.disabled = true;
-          }
-        }
-      }
+    if (!theme) {
+      return;
     }
-  }
-
-  private getThemeLink(theme: Theme) {
-    const links = this.window.document.getElementsByTagName('link');
-    for (var i = 0; i < links.length; i++) {
-      if (
-        links[i].rel.indexOf('stylesheet') != -1 &&
-        links[i].title === theme.codeName
-      ) {
-        return true;
-      }
-    }
-    return false;
+    const links = Array.from(this.window.document.getElementsByTagName('link'));
+    links.map(
+      link => (link.disabled = link.title === theme.codeName ? false : true),
+    );
   }
 }
