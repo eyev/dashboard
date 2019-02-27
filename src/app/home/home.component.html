@@ -1,0 +1,134 @@
+<div class="columns is-desktop">
+  <div class="column is-two-thirds-desktop">
+    <div class="chart-outer-container">
+      <h2 class="title"
+        >{{ lineChartOptions.title }}
+        <div class="buttons has-addons">
+          <span
+            class="button is-link is-small is-rounded"
+            [class.is-active]="lineChartOptions.type === 'impressions'"
+            (click)="toggleLineChart('impressions')"
+            >Impressions</span
+          >
+          <span
+            class="button is-link is-small"
+            [class.is-active]="lineChartOptions.type === 'conversions'"
+            (click)="toggleLineChart('conversions')"
+            >Conversions</span
+          >
+          <span
+            class="button is-link is-small is-rounded"
+            [class.is-active]="lineChartOptions.type === 'email-subscriptions'"
+            (click)="toggleLineChart('email-subscriptions')"
+            >Email Subscriptions</span
+          >
+        </div>
+        <span class="tag is-primary">Past 2 weeks</span>
+      </h2>
+      <eyev-line-chart [url]="lineChartOptions.url"></eyev-line-chart>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop">
+    <eyev-gauge-chart
+      title="Acquisition"
+      timeFrame="Past month"
+      url="/assets/mock-data/acquisition-chart-data.json"
+    ></eyev-gauge-chart>
+  </div>
+</div>
+<div class="columns is-multiline">
+  <div
+    class="column is-half-tablet is-half-widescreen is-one-quarter-fullhd"
+    *ngFor="let card of cards"
+  >
+    <eyev-chart-card [config]="card"></eyev-chart-card>
+  </div>
+</div>
+<div class="columns is-desktop">
+  <div class="column is-one-quarter-desktop is-half-tablet">
+    <h2 class="title">Announcements</h2>
+    <!-- TODO: turn into component -->
+    <div class="card">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-32x32">
+              <img
+                class="is-rounded"
+                src="/assets/images/default-avatar.jpg"
+                alt="Default avatar"
+              />
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4 is-flex"
+              >John Doe
+              <span class="tag is-primary is-flex-inline"
+                >Chief Executive Officer</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+          iaculis mauris.
+          <br />
+          <time datetime="2016-02-14">11:09 PM - 14 Feb 2016</time>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a class="card-footer-item">
+          <fa-icon [icon]="['fas', 'reply']"></fa-icon>
+          Reply
+        </a>
+        <a class="card-footer-item">
+          <fa-icon [icon]="['fas', 'eye-slash']"></fa-icon>
+          Hide
+        </a>
+      </footer>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-32x32">
+              <img
+                class="is-rounded"
+                src="/assets/images/secondary-avatar.jpg"
+                alt="Default avatar"
+              />
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4 is-flex"
+              >Jane Doe
+              <span class="tag is-primary is-flex-inline"
+                >Chief Financial Officer</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+          consequuntur iure ut reprehenderit architecto, suscipit facilis ipsa
+          illum veritatis sit! Asperiores quae sint impedit quaerat aut vitae
+          quo esse sunt.
+          <br />
+          <time datetime="2019-02-01">09:15 AM - 1 Feb 2019</time>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a class="card-footer-item">
+          <fa-icon [icon]="['fas', 'reply']"></fa-icon>
+          Reply
+        </a>
+        <a class="card-footer-item">
+          <fa-icon [icon]="['fas', 'eye-slash']"></fa-icon>
+          Hide
+        </a>
+      </footer>
+    </div>
+  </div>
+</div>
