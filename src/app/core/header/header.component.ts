@@ -11,7 +11,6 @@ import { slideInRight } from '@app/shared/animation-library';
 })
 export class HeaderComponent {
   isSidenavOpen = false;
-  constructor() {}
 
   toggleMenu(state?: boolean) {
     if (!state) {
