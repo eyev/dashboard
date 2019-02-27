@@ -1,0 +1,21 @@
+<div class="chart-outer-container">
+  <h2 class="title"
+    >{{ title }} <span class="tag is-primary"> {{ timeFrame }}</span></h2
+  >
+  <eyev-loading-spinner *ngIf="(isLoading | async)"></eyev-loading-spinner>
+  <div class="chart-container">
+    <div class="gauge-container">
+      <ngx-charts-gauge
+        class="chart-container"
+        [scheme]="scheme"
+        [results]="chartData | async"
+        [animations]="true"
+        [tooltipDisabled]="false"
+        [legend]="true"
+        [legendPosition]="'below'"
+        [legendTitle]="''"
+      >
+      </ngx-charts-gauge>
+    </div>
+  </div>
+</div>
