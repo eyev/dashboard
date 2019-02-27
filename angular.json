@@ -9,8 +9,8 @@
       "projectType": "application",
       "prefix": "eyev",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
+        "akita-schematics:component": {
+          "styleext": "scss"
         }
       },
       "architect": {
@@ -25,16 +25,19 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               {
-                "input": "src/styles/default.scss",
+                "input": "src/style-bundles/default.scss",
                 "lazy": true,
                 "bundleName": "assets/default"
               },
               {
-                "input": "src/styles/dark.scss",
+                "input": "src/style-bundles/dark.scss",
                 "lazy": true,
                 "bundleName": "assets/dark"
               }
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/app/shared/styles"]
+            },
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -95,7 +98,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": ["src/styles/default.scss"],
+            "styles": ["src/style-bundles/default.scss"],
             "scripts": [],
             "assets": ["src/favicon.ico", "src/assets"]
           }

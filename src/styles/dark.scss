@@ -1,9 +1,0 @@
-@import '../app/shared/styles/dark-variables';
-
-:root {
-  @each $key, $value in $variables {
-    --#{$key}: #{$value};
-  }
-}
-
-@import '~bulma/bulma';

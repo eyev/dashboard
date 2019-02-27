@@ -1,0 +1,19 @@
+@import 'default-variables';
+
+:root {
+  @each $key, $value in $variables {
+    --#{$key}: #{$value};
+  }
+}
+
+@import '~bulma/bulma';
+
+html,
+body {
+  overflow: hidden;
+}
+ngx-loading-bar #loading-bar-spinner {
+  position: fixed;
+  left: 50% !important;
+  right: 50% !important;
+}
