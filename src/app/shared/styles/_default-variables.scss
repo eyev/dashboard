@@ -1,5 +1,8 @@
 $brand-pink: hsl(340, 82%, 52%);
-$brand-blue: hsl(218, 100%, 63%);
+$brand-blue: hsl(218, 99%, 63%);
+$brand-yellow: hsl(49, 64%, 43%);
+$brand-purple: hsl(283, 65%, 46%);
+$brand-green: hsl(152, 89%, 39%);
 $brand-dark-grey: hsl(0, 0%, 13%);
 $brand-light-grey: hsl(0, 0%, 46%);
 $brand-lighter-grey: hsl(0, 0%, 74%);
@@ -10,6 +13,11 @@ $brand-white: hsl(0, 0%, 96%);
 $brand-font-family: BlinkMacSystemFont, -apple-system, 'Source Sans Pro',
   'Roboto', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   'Helvetica', 'Arial', sans-serif;
+$white: #fff;
+
+$shadow-sm: 0 2px 3px rgba(#000, 0.1), 0 0 0 1px rgba(#000, 0.1);
+$shadow-md: 0 6px 12px rgba(#000, 0.19), 0 3px 3px rgba(#000, 0.23);
+$shadow-lg: 0 14px 28px rgba(#000, 0.25), 0 10px 10px rgba(#000, 0.22);
 
 // ALL color definitions in components must come from this map
 // variables that define size can live independent of this map
@@ -21,10 +29,242 @@ $variables: (
   app-danger-color: $brand-danger,
   app-info-color: $brand-info,
   app-border-color: $brand-lighter-grey,
+  app-brand-name-color: $brand-dark-grey,
+  app-aside-background: $white,
+  app-chart-background: $white,
+  app-underlay-background: rgba($white, 0.4),
 );
 
 // Bulma Customization
 $primary: $brand-blue;
 $link: $brand-pink;
 $background: $brand-white;
+$body-background-color: $brand-white;
+$body-color: $brand-dark-grey;
 $family-sans-serif: $brand-font-family;
+
+// menu
+$menu-item-color: $body-color;
+$menu-item-hover-color: $brand-pink;
+$menu-item-hover-background-color: rgba($brand-white, 0.045);
+
+// Extends
+%scrollbar {
+  /* Gmail style scrollbar */
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-width: 1px 1px 1px 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-width: 0;
+  }
+
+  &::-webkit-scrollbar {
+    height: 16px;
+    overflow: visible;
+    width: 16px;
+  }
+
+  &::-webkit-scrollbar-button {
+    height: 0;
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 0 0 0 4px;
+  }
+
+  &::-webkit-scrollbar-track:horizontal {
+    border-width: 4px 0 0;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-track:horizontal:hover {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-track:active {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.14),
+      inset -1px 0 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-track:horizontal:active {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.14),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 1px 1px 1px 6px;
+    min-height: 28px;
+    padding: 100px 0 0;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-width: 6px 1px 1px;
+    padding: 0 0 0 100px;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+      inset -1px 0 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.35);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-width: 0 1px 0 6px;
+  }
+
+  &::-webkit-scrollbar-track:horizontal {
+    border-width: 6px 0 1px;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0.035);
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.14),
+      inset -1px -1px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-width: 0 1px 0 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-width: 6px 0 1px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+%thin-scrollbar {
+  /* Gmail style scrollbar */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-width: 1px 1px 1px 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-width: 0;
+  }
+
+  &::-webkit-scrollbar {
+    height: 16px;
+    overflow: visible;
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-button {
+    height: 0;
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 0 0 0 1px;
+  }
+
+  &::-webkit-scrollbar-track:horizontal {
+    border-width: 1px 0 0;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-track:horizontal:hover {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-track:active {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.14),
+      inset -1px 0 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-track:horizontal:active {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.14),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 1px 1px 1px 1px;
+    min-height: 28px;
+    padding: 100px 0 0;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-width: 1px 1px 1px;
+    padding: 0 0 0 100px;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+      inset -1px 0 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.35);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-width: 0 1px 0 1px;
+  }
+
+  &::-webkit-scrollbar-track:horizontal {
+    border-width: 6px 0 1px;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0.035);
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.14),
+      inset -1px -1px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-width: 0 1px 0 1px;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-width: 1px 0 1px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

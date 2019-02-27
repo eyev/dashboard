@@ -1,6 +1,7 @@
 $brand-pink: hsl(340, 82%, 52%);
 $brand-blue: hsl(218, 100%, 63%);
-$brand-dark-grey: hsl(0, 0%, 13%);
+$brand-dark-grey: #212121;
+$brand-dark-grey-alternate: #282828;
 $brand-light-grey: hsl(0, 0%, 37%);
 $brand-lighter-grey: hsl(0, 0%, 74%);
 $brand-success: hsl(141, 71%, 48%);
@@ -20,7 +21,16 @@ $variables: (
   app-success-color: $brand-success,
   app-danger-color: $brand-danger,
   app-info-color: $brand-info,
-  app-border-color: $brand-light-grey,
+  app-border-color: rgba($brand-white, 0.05),
+  app-brand-name-color: $brand-white,
+  app-aside-background: $brand-dark-grey-alternate,
+  app-header-icon-color: $brand-lighter-grey,
+  app-chart-background: $brand-dark-grey-alternate,
+  app-chart-tick-stroke: $brand-light-grey,
+  app-chart-axis-label-color: $brand-pink,
+  app-chart-label-color: $brand-lighter-grey,
+  app-chart-tooltip-anchor-fill: rgba($brand-white, 0.5),
+  app-underlay-background: rgba($brand-dark-grey, 0.4),
 );
 
 // Bulma Theme Customization
@@ -31,9 +41,10 @@ $background: $brand-dark-grey;
 $body-background-color: $brand-dark-grey;
 $body-color: $brand-white;
 $family-sans-serif: $brand-font-family;
+$link-hover: lighten($brand-pink, 20%);
 
 // Nav
-$navbar-background-color: darken($background, 5%);
+$navbar-background-color: $brand-dark-grey-alternate;
 
 // Buttons
 $button-background-color: $brand-pink;
@@ -41,11 +52,38 @@ $button-color: $brand-white;
 $button-border-color: darken($button-background-color, 5%);
 $button-hover-color: lighten($brand-white, 100%);
 $button-hover-border-color: darken($button-background-color, 10%);
+$button-text-hover-background-color: rgba($brand-white, 0.045);
 $button-focus-color: lighten($brand-white, 100%);
 $button-focus-border-color: darken($button-background-color, 10%);
 $button-active-color: lighten($brand-white, 100%);
 $button-active-border-color: darken($button-background-color, 10%);
 
 // Dropdowns
-$dropdown-content-background-color: #111;
-$dropdown-divider-background-color: $brand-light-grey;
+$dropdown-content-background-color: lighten($brand-dark-grey-alternate, 5%);
+$dropdown-divider-background-color: rgba($brand-white, 0.15);
+$dropdown-item-color: $brand-white;
+$dropdown-item-hover-color: $brand-white;
+$dropdown-item-hover-background-color: rgba($brand-white, 0.05);
+// menu
+$menu-item-color: $body-color;
+$menu-item-hover-color: $brand-pink;
+$menu-item-hover-background-color: rgba($brand-white, 0.045);
+
+// tags
+$tag-background-color: $brand-pink;
+$tag-color: $brand-white;
+
+// titles
+$title-color: $brand-lighter-grey;
+
+// box
+$box-color: $body-color;
+$box-background-color: $brand-dark-grey-alternate;
+
+// content
+$strong-color: lighten($body-color, 15%);
+
+// cards
+$card-background-color: $brand-dark-grey-alternate;
+$card-color: $body-color;
+$card-footer-border-top: 1px solid rgba($brand-white, 0.05);
