@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'eyev-user-menu',
@@ -6,11 +6,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./user-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserMenuComponent implements OnInit {
+export class UserMenuComponent {
   isActive = false;
-  constructor() {}
 
-  ngOnInit() {}
   toggleUserMenu(state?: boolean) {
     if (state) {
       this.isActive = state;

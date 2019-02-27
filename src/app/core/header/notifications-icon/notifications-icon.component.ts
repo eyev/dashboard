@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'eyev-notifications-icon',
@@ -6,11 +6,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./notifications-icon.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotificationsIconComponent implements OnInit {
+export class NotificationsIconComponent {
   isActive = false;
-  constructor() {}
 
-  ngOnInit() {}
   toggleNotificationsMenu(state?: boolean) {
     if (state) {
       this.isActive = state;
