@@ -1,0 +1,32 @@
+<div class="dropdown is-right" [class.is-active]="isActive">
+  <div class="dropdown-trigger is-flex" (click)="toggleUserMenu()">
+    <figure class="image is-32x32">
+      <img
+        class="is-rounded"
+        src="/assets/images/default-avatar.jpg"
+        alt="Default avatar"
+      />
+    </figure>
+    <fa-icon [icon]="['fas', 'sort-down']"> </fa-icon>
+  </div>
+  <div class="dropdown-menu" id="user-menu" role="menu">
+    <div class="dropdown-content">
+      <a class="dropdown-item">
+        Settings
+      </a>
+      <hr class="dropdown-divider" />
+      <a class="dropdown-item">
+        Profile
+      </a>
+      <hr class="dropdown-divider" />
+      <a class="dropdown-item">
+        Logout
+      </a>
+    </div>
+  </div>
+</div>
+<div
+  class="dropdown-underlay"
+  (click)="toggleUserMenu(false)"
+  *ngIf="isActive"
+></div>
