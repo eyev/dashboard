@@ -19,8 +19,6 @@ export class ChartCardComponent {
     timeFrame: '',
   };
 
-  constructor() {}
-
   scheme = {
     domain: ['#fff'],
   };

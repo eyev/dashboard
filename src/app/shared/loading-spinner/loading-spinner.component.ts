@@ -10,6 +10,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoadingSpinnerComponent {
-  constructor() {}
-}
+export class LoadingSpinnerComponent {}
