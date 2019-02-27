@@ -1,0 +1,34 @@
+<div class="chart-card" [ngClass]="config.type">
+  <div class="row">
+    <div class="card-icon">
+      <fa-icon [icon]="['fas', icons[config.type]]"></fa-icon>
+    </div>
+    <div class="card-labels">
+      <div class="value">{{ config.value }} </div>
+      <div class="title is-size-5">{{ config.title }}</div>
+    </div>
+    <div class="chart-card-chart">
+      <div class="chart-container">
+        <ngx-charts-line-chart
+          [results]="config.data"
+          [scheme]="scheme"
+          [gradient]="false"
+          [xAxis]="false"
+          [yAxis]="false"
+          [legend]="false"
+          [showXAxisLabel]="false"
+          [showYAxisLabel]="false"
+          [autoScale]="true"
+          [showGridLines]="false"
+          [curve]="curve"
+          [tooltipDisabled]="true"
+          [animations]="true"
+        >
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+  </div>
+  <div class="row timeframe">
+    <fa-icon [icon]="['fas', 'clock']"></fa-icon> {{ config.timeFrame }}
+  </div>
+</div>

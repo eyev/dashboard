@@ -1,0 +1,82 @@
+@import 'default-variables';
+
+.chart-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  box-shadow: $shadow-sm;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+  .row {
+    display: flex;
+    width: 100%;
+    > div {
+      padding: 1rem;
+    }
+  }
+  &.earnings {
+    background: linear-gradient(
+      to right,
+      $brand-green,
+      lighten($brand-green, 12%)
+    );
+  }
+  &.users {
+    background: linear-gradient(
+      to right,
+      $brand-purple,
+      lighten($brand-purple, 12%)
+    );
+  }
+  &.ecommerce {
+    background: linear-gradient(
+      to right,
+      $brand-blue,
+      lighten($brand-blue, 12%)
+    );
+  }
+  &.support {
+    background: linear-gradient(
+      to right,
+      $brand-pink,
+      lighten($brand-pink, 12%)
+    );
+  }
+}
+.card-icon {
+  width: 5rem;
+  color: #fff;
+  font-size: 2rem;
+}
+.card-labels {
+  width: calc(100% - 12rem);
+  color: #fff;
+  .title {
+    color: #fff;
+  }
+}
+
+.chart-card-chart {
+  width: 7rem;
+  padding: 1rem 0 !important;
+}
+.chart-container {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+}
+
+.timeframe {
+  border-top: 1px solid rgba(#fff, 0.3);
+  padding: 0.5rem;
+  color: #fff;
+  fa-icon {
+    margin-right: 0.5rem;
+  }
+}
