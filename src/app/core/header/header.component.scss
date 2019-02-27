@@ -1,20 +1,50 @@
-@import '../../shared/styles/mixins';
+@import 'mixins';
+@import 'default-variables';
+@import '~bulma/sass/utilities/mixins';
+
 nav {
   @include var(border-bottom-color, app-border-color);
   border-bottom-width: 1px;
-  border-bottom-style: dotted;
-  position: sticky;
+  border-bottom-style: solid;
+  box-shadow: $shadow-sm;
+  position: static;
+  z-index: 20;
 }
 .navbar-brand {
   font-size: 1.5rem;
   align-items: center;
   padding: 0 1rem;
   font-weight: 600;
+  cursor: pointer;
+  @include var(color, app-brand-name-color);
   span {
-    @include var(color, app-accent-color);
+    @include var(color, app-primary-color);
+  }
+  button {
+    margin-right: 1rem;
   }
 }
 .navbar-menu {
   align-items: center;
   justify-content: flex-end;
+  margin-right: 1rem;
+}
+eyev-sidenav {
+  display: flex;
+  box-shadow: $shadow-md;
+  position: absolute;
+  z-index: 20;
+  @include desktop {
+    display: none;
+  }
+}
+.sidenav-underlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 53px;
+  bottom: 0;
+  @include var(background, app-underlay-background);
+
+  z-index: 19;
 }

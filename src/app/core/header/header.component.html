@@ -1,6 +1,21 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand"> <span>eyev</span>.dashboard </div>
+  <div class="navbar-brand">
+    <button
+      class="button is-outlined is-text is-hidden-desktop"
+      (click)="toggleMenu()"
+      ><fa-icon [icon]="['fas', 'bars']"></fa-icon
+    ></button>
+    <span>eyev</span>dashboard</div
+  >
   <div class="navbar-menu">
+    <eyev-notifications-icon></eyev-notifications-icon>
     <eyev-theme-selector></eyev-theme-selector>
+    <eyev-user-menu></eyev-user-menu>
   </div>
 </nav>
+<eyev-sidenav *ngIf="isSidenavOpen" [@slideInRight]></eyev-sidenav>
+<div
+  class="sidenav-underlay"
+  *ngIf="isSidenavOpen"
+  (click)="toggleMenu(false)"
+></div>
