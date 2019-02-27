@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 import { Theme } from '@app/core/header/theme-selector/state/theme.model';
 import { ThemesQuery } from '@app/core/header/theme-selector/state/themes.query';
@@ -10,6 +10,7 @@ import { Observable, of } from 'rxjs';
   selector: 'eyev-theme-selector',
   templateUrl: './theme-selector.component.html',
   styleUrls: ['./theme-selector.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ThemeSelectorComponent implements OnInit {
   isActive = false;

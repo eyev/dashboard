@@ -1,11 +1,12 @@
-<div
-  class="dropdown is-right"
-  [class.is-active]="isActive"
-  (click)="toggleThemeSelector()"
->
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+<div class="dropdown is-right" [class.is-active]="isActive">
+  <div class="dropdown-trigger" (click)="toggleThemeSelector()">
+    <button
+      class="button is-borderless"
+      aria-haspopup="true"
+      aria-controls="dropdown-menu2"
+    >
       <fa-icon [icon]="['fas', 'palette']" class="icon"></fa-icon>
+      <fa-icon [icon]="['fas', 'sort-down']"> </fa-icon>
     </button>
   </div>
   <div class="dropdown-menu" id="dropdown-menu2" role="menu">
@@ -33,3 +34,8 @@
     </div>
   </div>
 </div>
+<div
+  class="dropdown-underlay"
+  (click)="toggleThemeSelector(false)"
+  *ngIf="isActive"
+></div>
