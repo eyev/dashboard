@@ -1,0 +1,16 @@
+@import 'mixins';
+
+:host {
+  display: flex;
+}
+aside {
+  max-width: 200px;
+  height: calc(100vh - 53px);
+  padding: 1rem;
+  border-right-width: 1px;
+  border-right-style: solid;
+  overflow: auto;
+  @include var(border-right-color, app-border-color);
+  @include var(background-color, app-aside-background);
+  @extend %scrollbar;
+}
