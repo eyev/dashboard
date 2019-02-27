@@ -31,8 +31,11 @@ export class ThemesService {
       return;
     }
     const links = Array.from(this.window.document.getElementsByTagName('link'));
-    links.map(
-      link => (link.disabled = link.title === theme.codeName ? false : true),
-    );
+    links.map(link => {
+      if (!link.title) {
+        return link;
+      }
+      return (link.disabled = link.title === theme.codeName ? false : true);
+    });
   }
 }
