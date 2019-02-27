@@ -1,0 +1,73 @@
+@import 'mixins';
+@import 'default-variables';
+
+button {
+  border: none;
+  background: transparent;
+  .icon {
+    @include var(color, app-header-icon-color);
+  }
+}
+.dropdown-menu {
+  width: 350px;
+  box-shadow: $shadow-md;
+}
+.dropdown-item {
+  display: flex;
+  max-width: 400px;
+  align-items: center;
+  .notification-icon {
+    padding-right: 1rem;
+    font-size: 1.15rem;
+  }
+}
+.dropdown-underlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.dropdown-trigger {
+  position: relative;
+}
+.notifications-button:hover .pulse,
+.notifications-button:active .pulse,
+.notifications-button:focus .pulse {
+  animation: pulse 2s infinite;
+}
+.notification-indicator {
+  background: $brand-danger;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.65rem;
+  left: 1.1rem;
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba($brand-danger, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba($brand-danger, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba($brand-danger, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba($brand-danger, 0.4);
+    box-shadow: 0 0 0 0 rgba($brand-danger, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba($brand-danger, 0);
+    box-shadow: 0 0 0 10px rgba($brand-danger, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba($brand-danger, 0);
+    box-shadow: 0 0 0 0 rgba($brand-danger, 0);
+  }
+}

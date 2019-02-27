@@ -1,0 +1,42 @@
+<div class="dropdown is-right" [class.is-active]="isActive">
+  <div class="dropdown-trigger" (click)="toggleNotificationsMenu()">
+    <button
+      class="button is-borderless notifications-button"
+      aria-haspopup="true"
+      aria-controls="notifications-menu"
+    >
+      <fa-icon [icon]="['fas', 'bell']" class="icon"> </fa-icon>
+      <div class="notification-indicator pulse"></div>
+      <fa-icon [icon]="['fas', 'sort-down']"> </fa-icon>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="notifications-menu" role="menu">
+    <div class="dropdown-content">
+      <a class="dropdown-item">
+        <div class="notification-icon">
+          <fa-icon [icon]="['fas', 'life-ring']"></fa-icon>
+        </div>
+        <div class="notification-content"><p>12 New Support Tickets</p></div>
+      </a>
+      <hr class="dropdown-divider" />
+      <a class="dropdown-item">
+        <div class="notification-icon">
+          <fa-icon [icon]="['fas', 'chart-bar']"></fa-icon>
+        </div>
+        <div class="notification-content"><p>New reports generated</p></div>
+      </a>
+      <hr class="dropdown-divider" />
+      <a class="dropdown-item">
+        <div class="notification-icon">
+          <fa-icon [icon]="['fas', 'comments']"></fa-icon>
+        </div>
+        <div class="notification-content"><p>4 New Messages</p></div>
+      </a>
+    </div>
+  </div>
+</div>
+<div
+  class="dropdown-underlay"
+  (click)="toggleNotificationsMenu(false)"
+  *ngIf="isActive"
+></div>
