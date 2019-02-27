@@ -1,0 +1,19 @@
+<div class="chart-container">
+  <ngx-charts-line-chart
+    class="chart-container"
+    [results]="chartData | async"
+    [scheme]="scheme"
+    [gradient]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true"
+    [showXAxisLabel]="false"
+    [showYAxisLabel]="false"
+    [yAxisLabel]="'Impressions'"
+    [autoScale]="false"
+    [showGridLines]="true"
+    [curve]="curve"
+    [legendTitle]="''"
+  >
+  </ngx-charts-line-chart>
+</div>
