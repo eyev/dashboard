@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ChartCardConfig } from '@app/shared/chart-card/chart-card.model';
+import { ChartCardQuery } from '@app/shared/chart-card/state/chart-card.query';
+import { ChartCardService } from '@app/shared/chart-card/state/chart-card.service';
+
+import { of } from 'rxjs';
 
 @Component({
   selector: 'eyev-home',
@@ -30,144 +34,18 @@ export class HomeComponent implements OnInit {
       title: 'Email Subscriptions',
     },
   ];
-  cards: ChartCardConfig[] = [
-    {
-      title: 'Earnings',
-      type: 'earnings',
-      value: '$30,200',
-      timeFrame: 'Past 7 days',
-      data: [
-        {
-          name: 'Overall Earnings',
-          series: [
-            {
-              name: '2/1/2019',
-              value: 23032,
-            },
-            {
-              name: '2/2/2019',
-              value: 22213,
-            },
-            {
-              name: '2/3/2019',
-              value: 23615,
-            },
-            {
-              name: '2/4/2019',
-              value: 23732,
-            },
-            {
-              name: '2/5/2019',
-              value: 23213,
-            },
-            {
-              name: '2/6/2019',
-              value: 24615,
-            },
-            {
-              name: '2/7/2019',
-              value: 25615,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'New Users',
-      type: 'users',
-      value: '301',
-      timeFrame: 'Past 7 days',
-      data: [
-        {
-          name: 'New Memberships',
-          series: [
-            {
-              name: '2/1/2019',
-              value: 32,
-            },
-            {
-              name: '2/2/2019',
-              value: 123,
-            },
-            {
-              name: '2/3/2019',
-              value: 146,
-            },
-            {
-              name: '2/4/2019',
-              value: 132,
-            },
-            {
-              name: '2/5/2019',
-              value: 143,
-            },
-            {
-              name: '2/6/2019',
-              value: 150,
-            },
-            {
-              name: '2/7/2019',
-              value: 148,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Open Tickets',
-      type: 'support',
-      value: '876',
-      timeFrame: 'Current',
-      data: [
-        {
-          name: 'Open Tickets',
-          series: [
-            {
-              name: '2/1/2019',
-              value: 880,
-            },
-            {
-              name: '2/2/2019',
-              value: 850,
-            },
-            {
-              name: '2/3/2019',
-              value: 876,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'New Orders',
-      type: 'ecommerce',
-      value: '1223',
-      timeFrame: 'Today',
-      data: [
-        {
-          name: 'New Orders',
-          series: [
-            {
-              name: '1/24/2019',
-              value: 1355,
-            },
-            {
-              name: '2/1/2019',
-              value: 1335,
-            },
-            {
-              name: '2/8/2019',
-              value: 1223,
-            },
-          ],
-        },
-      ],
-    },
-  ];
-  constructor() {}
+  cards = of<ChartCardConfig[]>();
+  constructor(
+    private cardService: ChartCardService,
+    private cardQuery: ChartCardQuery,
+  ) {}
 
   ngOnInit() {
     this.lineChartOptions = this.lineCharts[0];
+    this.cardService
+      .get('/assets/mock-data/dashboard-card-data.json')
+      .subscribe();
+    this.cards = this.cardQuery.selectAll();
   }
 
   toggleLineChart(category: string) {

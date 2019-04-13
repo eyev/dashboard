@@ -39,7 +39,7 @@
 <div class="columns is-multiline">
   <div
     class="column is-half-tablet is-half-widescreen is-one-quarter-fullhd"
-    *ngFor="let card of cards"
+    *ngFor="let card of (cards | async)"
   >
     <eyev-chart-card [config]="card"></eyev-chart-card>
   </div>
