@@ -1,14 +1,18 @@
 [
   {
+    "id": 1,
     "author": "Jane Doe",
     "position": "Chief Financial Officer",
     "time": "2019-03-12T15:09:00.000Z",
+    "avatar": "/assets/images/secondary-avatar.jpg",
     "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consequuntur iure ut reprehenderit architecto, suscipit facilis ipsa illum veritatis sit! Asperiores quae sint impedit quaerat aut vitae quo esse sunt."
   },
   {
+    "id": 0,
     "author": "John Doe",
     "position": "Chief Executive Officer",
-    "time": "2019-03-16T15:09:00.000Z",
+    "time": "2019-03-16T18:09:00.000Z",
+    "avatar": "/assets/images/default-avatar.jpg",
     "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris."
   }
 ]

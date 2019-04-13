@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HomeService } from '@app/home/home.service';
+import { Announcement } from '@app/shared/announcement/state/announcement.model';
+import { AnnouncementQuery } from '@app/shared/announcement/state/announcement.query';
 import { ChartCardConfig } from '@app/shared/chart-card/chart-card.model';
 import { ChartCardQuery } from '@app/shared/chart-card/state/chart-card.query';
-import { ChartCardService } from '@app/shared/chart-card/state/chart-card.service';
 
 import { of } from 'rxjs';
 
@@ -35,17 +37,21 @@ export class HomeComponent implements OnInit {
     },
   ];
   cards = of<ChartCardConfig[]>();
+  announcements = of<Announcement[]>();
   constructor(
-    private cardService: ChartCardService,
     private cardQuery: ChartCardQuery,
+    private homeService: HomeService,
+    private announcementQuery: AnnouncementQuery,
   ) {}
 
   ngOnInit() {
     this.lineChartOptions = this.lineCharts[0];
-    this.cardService
-      .get('/assets/mock-data/dashboard-card-data.json')
-      .subscribe();
+    this.homeService.getCards().subscribe();
+    this.homeService.getNotifications().subscribe();
     this.cards = this.cardQuery.selectAll();
+    this.announcements = this.announcementQuery.selectAll({
+      limitTo: 2,
+    });
   }
 
   toggleLineChart(category: string) {

@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-32x32">
+          <img
+            class="is-rounded"
+            [src]="announcement.avatar"
+            alt="Default avatar"
+          />
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4 is-flex"
+          >{{ announcement.author }}
+          <span class="tag is-primary is-flex-inline">{{
+            announcement.position
+          }}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="content">
+      {{ announcement.message }}
+      <br />
+      <time [attr.datetime]="announcement.time | date: 'yyyy-MM-DD'">
+        {{ announcement.time | date: 'HH:mm a - dd MMM yyyy' }}
+      </time>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a class="card-footer-item">
+      <fa-icon [icon]="['fas', 'reply']"></fa-icon>
+      Reply
+    </a>
+    <a class="card-footer-item">
+      <fa-icon [icon]="['fas', 'eye-slash']"></fa-icon>
+      Hide
+    </a>
+  </footer>
+</div>

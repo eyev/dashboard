@@ -37,18 +37,7 @@
     display: inline-flex;
   }
 }
-.card-footer-item fa-icon {
-  margin-right: 0.5rem;
-}
-.card {
-  margin-bottom: 1rem;
-  .title > .tag {
-    margin-left: auto;
-  }
-  &:hover {
-    box-shadow: $shadow-md;
-  }
-}
+
 .panel {
   box-shadow: $shadow-sm;
   &:hover {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class ChartCardService {
+export class AnnouncementService {
   constructor() {}
 }
