@@ -1,0 +1,17 @@
+@import 'mixins';
+
+fa-icon {
+  font-size: 1.25rem;
+  transition: color 0.3s;
+}
+.is-open {
+  border-bottom: 1px solid;
+  @include var(border-bottom-color, app-navigation-item-border);
+  fa-icon {
+    display: inline-block;
+    width: 2rem;
+  }
+}
+li:hover {
+  @include var(background, app-navigation-hover-background);
+}

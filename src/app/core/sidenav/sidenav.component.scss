@@ -4,13 +4,35 @@
   display: flex;
 }
 aside {
+  display: flex;
+  flex-direction: column;
   max-width: 200px;
   height: calc(100vh - 53px);
-  padding: 1rem;
   border-right-width: 1px;
   border-right-style: solid;
-  overflow: auto;
+  overflow: initial auto;
   @include var(border-right-color, app-border-color);
   @include var(background-color, app-aside-background);
   @extend %scrollbar;
+  &.is-open {
+    width: 200px;
+  }
+}
+
+p.menu-label {
+  padding: 0.5rem;
+}
+
+.sidenav-toggle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 0.75em;
+  font-size: 1.15rem;
+  margin-top: auto;
+  cursor: pointer;
+  .is-open & {
+    justify-content: flex-end;
+  }
 }

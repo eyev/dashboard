@@ -1,4 +1,8 @@
-<div class="dropdown is-right" [class.is-active]="isActive">
+<div
+  class="dropdown is-right tooltip is-tooltip-bottom"
+  data-tooltip="Tooltip Text"
+  [class.is-active]="isActive"
+>
   <div class="dropdown-trigger" (click)="toggleThemeSelector()">
     <button
       class="button is-borderless"

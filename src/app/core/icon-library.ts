@@ -1,5 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
+  faArrowRight,
   faBars,
   faBell,
   faChartBar,
@@ -9,15 +10,21 @@ import {
   faClock,
   faComments,
   faEyeSlash,
+  faHome,
   faLifeRing,
   faMoneyCheckAlt,
   faPalette,
   faReply,
   faShoppingCart,
   faSortDown,
+  faTh,
   faUserPlus,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowFromLeft,
+  faArrowFromRight,
+} from '@fortawesome/pro-solid-svg-icons';
 
 export function installFontAwesomeIcons() {
   library.add(faBell);
@@ -37,4 +44,9 @@ export function installFontAwesomeIcons() {
   library.add(faReply);
   library.add(faEyeSlash);
   library.add(faCircle);
+  library.add(faTh);
+  library.add(faHome);
+  library.add(faArrowRight);
+  library.add(faArrowFromRight);
+  library.add(faArrowFromLeft);
 }

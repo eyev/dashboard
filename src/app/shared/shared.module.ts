@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { NgxSubscribeDirective } from '@app/shared/utility/ngx-subscribe.directive';
 import { windowProvider } from '@app/shared/utility/window.service';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -19,6 +20,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     GaugeChartComponent,
     LoadingSpinnerComponent,
     AnnouncementComponent,
+    NgxSubscribeDirective,
   ],
   imports: [CommonModule, FontAwesomeModule, NgxChartsModule],
   exports: [
@@ -29,6 +31,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     GaugeChartComponent,
     LoadingSpinnerComponent,
     AnnouncementComponent,
+    NgxSubscribeDirective,
   ],
   providers: [windowProvider],
 })

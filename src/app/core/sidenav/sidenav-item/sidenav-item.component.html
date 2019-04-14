@@ -1,0 +1,18 @@
+<li *ngIf="isOpen; else iconTemplate" class="is-open">
+  <a [routerLink]="navItem.route">
+    <fa-icon [icon]="navItem.icon"></fa-icon>
+    {{ navItem.name }}
+  </a>
+</li>
+
+<ng-template #iconTemplate>
+  <li>
+    <a
+      [routerLink]="navItem.route"
+      class="tooltip is-tooltip-right"
+      [attr.data-tooltip]="navItem.name"
+    >
+      <fa-icon [icon]="navItem.icon"></fa-icon>
+    </a>
+  </li>
+</ng-template>
