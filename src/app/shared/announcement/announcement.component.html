@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="isVisible" [@slideInRight]>
   <div class="card-content">
     <div class="media">
       <div class="media-left">
@@ -33,7 +33,7 @@
       <fa-icon [icon]="['fas', 'reply']"></fa-icon>
       Reply
     </a>
-    <a class="card-footer-item">
+    <a class="card-footer-item" (click)="hideCard()">
       <fa-icon [icon]="['fas', 'eye-slash']"></fa-icon>
       Hide
     </a>

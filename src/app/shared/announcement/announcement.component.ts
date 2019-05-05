@@ -1,13 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
+import { slideInRight } from '@app/shared/animation-library';
 import { Announcement } from '@app/shared/announcement/state/announcement.model';
 
 @Component({
   selector: 'eyev-announcement',
   templateUrl: './announcement.component.html',
   styleUrls: ['./announcement.component.scss'],
+  animations: [slideInRight],
 })
-export class AnnouncementComponent implements OnInit {
+export class AnnouncementComponent {
   @Input() announcement: Announcement = {
     id: 0,
     author: '',
@@ -16,7 +18,8 @@ export class AnnouncementComponent implements OnInit {
     avatar: '',
     time: '',
   };
-  constructor() {}
-
-  ngOnInit() {}
+  isVisible = true;
+  hideCard() {
+    this.isVisible = false;
+  }
 }
