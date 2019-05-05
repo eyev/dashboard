@@ -35,7 +35,15 @@ export class ThemesService {
       if (!link.title) {
         return link;
       }
-      return (link.disabled = link.title === theme.codeName ? false : true);
+      if (link.title === theme.codeName) {
+        link.disabled = false;
+      }
+
+      setTimeout(() => {
+        if (link.title !== theme.codeName) {
+          link.disabled = true;
+        }
+      }, 10);
     });
   }
 }
