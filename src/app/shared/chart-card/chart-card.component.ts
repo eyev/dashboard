@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+import { fadeIn } from '@app/shared/animation-library';
 import { ChartCardConfig } from '@app/shared/chart-card/chart-card.model';
 
 import * as shape from 'd3-shape';
@@ -9,6 +10,7 @@ import * as shape from 'd3-shape';
   templateUrl: './chart-card.component.html',
   styleUrls: ['./chart-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [fadeIn],
 })
 export class ChartCardComponent {
   @Input() config: ChartCardConfig = {
