@@ -47,7 +47,6 @@
 <div class="columns is-desktop">
   <div class="column is-one-quarter-desktop is-half-tablet">
     <h2 class="title">Announcements</h2>
-    <!-- TODO: turn into component -->
     <eyev-announcement
       *ngFor="let announcement of (announcements | async)"
       [announcement]="announcement"
